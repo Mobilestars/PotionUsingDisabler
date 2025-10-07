@@ -1,0 +1,7 @@
+# List of disabled potions for usage
+# Use PotionType names from the Bukkit API
+# Example: HARMING, HEALING, POISON, STRONG_HEALING, LONG_REGENERATION
+# See all available PotionType names here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionType.html
+disabled-potions:
+  - HARMING
+  - STRONG_HARMING

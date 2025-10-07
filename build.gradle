@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id "xyz.jpenilla.run-paper" version "2.3.1"
+}
+
+group = 'de.scholle'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(17)
+}
+
+tasks.named('runServer') {
+    minecraftVersion("1.18")
+}
+
+processResources {
+    inputs.property("version", version)
+    filteringCharset = 'UTF-8'
+    filesMatching("plugin.yml") {
+        expand(version: version)
+    }
+}

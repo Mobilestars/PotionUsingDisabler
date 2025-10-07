@@ -1,0 +1,8 @@
+name: PotionUsingDisabler
+version: '1.0.0'
+main: de.scholle.potionusingdisabler.PotionUsingDisabler
+api-version: '1.18'
+prefix: PUD
+authors: [ Mobilestars ]
+description: Disables specific potions for using, configurable via config.yml
+website: https://modrinth.com/project/potionusingdisabler
